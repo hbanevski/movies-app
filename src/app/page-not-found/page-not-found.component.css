@@ -1,0 +1,15 @@
+#wrapper {
+    height: 1fr;
+}
+
+#body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 300px;
+}
+
+button {
+    margin-top: 5%;
+}

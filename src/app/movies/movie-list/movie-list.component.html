@@ -1,0 +1,11 @@
+<div class="wrap">
+    <form action="">
+        <input type="text" placeholder="Search the collection" class="form-control" [(ngModel)]="searchText" id="search" name="search" autocomplete="off">
+        <i class=" fa fa-search box "></i>
+    </form>
+    <div class="item " fxLayout="row wrap " fxLayoutGap="20px " fxLayoutAlign="space-around center ">
+
+        <app-movie-card fxFlex.gt-xs=" 70% " [fxFlex.gt-md]="regularDistribution" *ngFor="let movie of movies | filter:searchText " [movie]="movie ">
+        </app-movie-card>
+    </div>
+</div>

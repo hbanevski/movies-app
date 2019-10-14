@@ -1,0 +1,77 @@
+.card-body .buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.my-card {
+    display: flex;
+    margin-bottom: 15px;
+    margin-top: 5%;
+    transition: all 0.1s;
+}
+
+.my-card:hover {
+    transform: scale(1.009);
+}
+
+.card-text textarea {
+    margin-top: 10px;
+}
+
+.card-text input {
+    margin-top: 5px;
+}
+
+#fav i {
+    color: white;
+}
+
+#more i {
+    color: black;
+    font-weight: 1000;
+}
+
+#edit {
+    border-radius: 0px;
+    width: 100%;
+}
+
+#edit-cast {
+    width: 100%;
+}
+
+#edit-duration {
+    width: 20%;
+}
+
+#save {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#remove {
+    width: 100%;
+}
+
+::placeholder {
+    color: darkslategray;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.edit-photo img {
+    opacity: 0.2;
+}
+
+.edit-photo {
+    border: 0.5px solid darkgray;
+    border-radius: 5px;
+}
+
+.edit-photo input {
+    position: absolute;
+    width: 50%;
+    top: 58%;
+    left: 35%;
+    border-radius: 5px;
+}

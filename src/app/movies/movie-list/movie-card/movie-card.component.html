@@ -1,0 +1,79 @@
+<div class="my-card card">
+    <img src="{{ movie.imageUrl }}" class="card-img-top" alt="{{ movie.name }}">
+    <div class="card-body">
+        <h5 class="card-title">{{ movie.name }}</h5>
+        <p class="card-text" style="margin-top: 10px;"><strong>Directed by:</strong> {{movie.director}}</p>
+        <p class="card-text">{{ movie.desc | truncate:[100, '...'] }}</p>
+        <div class="buttons" *ngIf="movie.favorite===true; else notFav">
+            <button class="btn btn-light button" id="more" (click)="openModal(movieDetail)">See more <i class="fa fa-angle-double-right"></i></button>
+            <button class="btn btn-dark button" id="fav" (click)="movie.favorite=false">
+                Remove from favorites <i class="fa fa-times"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<ng-template #notFav>
+    <div class="buttons">
+        <button class="btn btn-light button" id="more" (click)="openModal(movieDetail)">See more <i class="fa fa-angle-double-right"></i></button>
+        <button class="btn btn-dark button" id="fav" (click)="movie.favorite=true">
+                    Add to favorites <i class="fa fa-heart"></i>
+                </button>
+    </div>
+</ng-template>
+
+
+<ng-template #movieDetail>
+    <div *ngIf="editMode===false; else edit">
+        <div class="modal-header">
+            <h4 class="modal-title pull-left">{{ movie.name }}</h4>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide(); editMode=false">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <button class="btn btn-secondary" id="edit" (click)="editMode=!editMode">
+        {{ editMode ? 'Exit' : 'Enter'}} edit mode <i class="fa fa-wrench"></i></button>
+        <div class="modal-body">
+            <div class="card">
+                <div class="card-body" style="cursor:pointer">
+                    <h5 class="card-title"><strong>Starring: </strong>{{ movie.actors }}</h5>
+                    <p class="card-text"><small class="text-muted">{{ movie.duration | LengthPipe }}</small></p>
+                    <p class="card-text">{{ movie.desc }}</p>
+                    <p class="card-text"><small class="text-muted"><strong>director: </strong>{{ movie.director }}</small></p>
+                    <button (click)="remove(movie);modalRef.hide()" id="remove" class="btn btn-danger">Remove from collection</button>
+                </div>
+                <a href="{{ movie.trailerUrl }}" target="_blank"><img class="card-img-top" src="{{ movie.imageUrl }}"></a>
+                <p class="card-text"><small class="text-muted">Click on the image to see the trailer</small></p>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #edit>
+        <form>
+            <div class="modal-header">
+                <input type="text" placeholder="{{movie.name}}">
+                <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide();editMode=false">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <button class="btn btn-secondary" id="edit" (click)="editMode=!editMode">
+                {{ editMode ? 'Exit' : 'Enter'}} edit mode <i class="fa fa-wrench"></i></button>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title"><input id="edit-cast" type="text" placeholder="{{ movie.actors }}"></div>
+                        <div class="card-text"><input id="edit-duration" type="number" min="0" placeholder="(minutes)"></div>
+                        <div class="card-text"><textarea rows="5" cols="50" placeholder={{movie.desc}}></textarea></div>
+                        <div class="card-text"><input type="text" placeholder="{{ movie.director }}"> </div>
+                    </div>
+                    <div class="edit-photo">
+                        <img class="card-img-top" src="{{ movie.imageUrl }} ">
+                        <input type="file" class="form-control-file" id="imageUrl" name="imageUrl">
+                    </div>
+                    <button class="btn btn-danger" id="save" type="submit">Save changes</button>
+                </div>
+            </div>
+        </form>
+    </ng-template>
+
+</ng-template>

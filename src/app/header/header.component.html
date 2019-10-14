@@ -1,0 +1,22 @@
+<link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky">
+    <a class="navbar-brand" [routerLink]="['/favorite-movies']" href="#" id="logo"><img src="https://img.pngio.com/clapperboard-movie-clapboard-clapper-film-cinema-svg-png-icon-free-movie-clapper-png-980_914.png" alt="logo" widht="50" height="50"></a>
+    <a href="#" [routerLink]="['/all-movies']" style="text-decoration: none;">
+        <h5 id="typo">My Movie Collection</h5>
+    </a>
+    <div class="collapse navbar-collapse col-11 justify-content-end">
+        <ul class="navbar-nav nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#" [routerLink]="['/all-movies']" routerLinkActive="router-link-active">All Movies</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" [routerLink]="['/favorite-movies']" routerLinkActive="router-link-active">Favorite Movies</a>
+            </li>
+            <li class="nav-item form-link">
+                <a class="nav-link" href="#" [routerLink]="['/add-movie']" routerLinkActive="router-link-active">Add a Movie</a>
+            </li>
+        </ul>
+    </div>
+</nav>

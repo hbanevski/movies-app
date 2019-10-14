@@ -1,0 +1,24 @@
+<ng-container id="no-fav" *ngIf="filteredMovies.length <= 0 ; else favorite">
+    <div class="wrap">
+        <div class="no-fav">
+
+            <h4>No movies added yet.</h4>
+            <h2>Select your favorite motion pictures from the <a [routerLink]="['/all-movies']">collection</a></h2>
+        </div>
+    </div>
+</ng-container>
+
+<ng-template #favorite>
+    <div class="wrap">
+        <form action="">
+            <input type="text" placeholder="Search through favorie movies" class="form-control" [(ngModel)]="searchText" name="search" autocomplete="off">
+            <i class="fa fa-search box"></i>
+        </form>
+        <div class="item" fxLayout="row wrap" fxLayoutGap="25px" fxLayoutAlign="space-around center">
+            <ng-container *ngFor="let movie of filteredMovies | filter: searchText">
+                <app-movie-card [movie]="movie" fxFlex.gt-xs="50%" [fxFlex.gt-md]="regularDistribution ">
+                </app-movie-card>
+            </ng-container>
+        </div>
+    </div>
+</ng-template>

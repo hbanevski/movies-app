@@ -1,0 +1,6 @@
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(104, 151, 125));
+}

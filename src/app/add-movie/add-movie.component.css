@@ -1,0 +1,21 @@
+#movie-form {
+    padding: 10% 25%;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin-top: 70px;
+}
+
+.sth {
+    display: flex;
+    flex-direction: inherit;
+    justify-content: center;
+}
+
+.form-check {
+    position: relative;
+    top: 30px;
+}

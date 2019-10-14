@@ -1,0 +1,27 @@
+.nav {
+    background-color: #1E1E1E;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#signature {
+    font-size: 12px;
+    color: rgb(169, 169, 169);
+    margin-right: 20px;
+    padding-top: 12px;
+}
+
+.links {
+    margin-right: 20px;
+}
+
+i {
+    color: rgb(104, 151, 125);
+}
+
+span {
+    color: rgba(169, 169, 169, 0.3)
+}

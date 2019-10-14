@@ -1,0 +1,42 @@
+* {
+    font-size: 1.001em;
+    font-weight: 500;
+    font-family: 'Merriweather', serif;
+}
+
+#typo {
+    padding-top: 20px;
+    font-family: 'Courgette', cursive;
+    color: black;
+}
+
+.nav-item {
+    margin: 0 10px;
+}
+
+.navbar {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height: 1fr;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.sticky {
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, .08);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#logo {
+    transition: all 0.05s;
+}
+
+#logo:hover {
+    transform: rotate(-10deg);
+}
