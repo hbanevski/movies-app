@@ -27,12 +27,9 @@ export class MovieCardComponent implements OnInit {
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template,{ backdrop: 'static', keyboard: false });
   }
-
-  remove(movie){
-    this.movieService.removeMovie(movie);
-    console.log(movie);
+  removeMovie(id){
+    this.movieService.deleteMovie(id);
   }
-
 }
 
 

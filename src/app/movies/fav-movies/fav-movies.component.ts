@@ -17,28 +17,13 @@ export class FavMoviesComponent implements OnInit {
   constructor(private movieService:MovieService) {
   }
 
-  ngOnChanges() {
-    this.getFavorites();
-  }
 
   ngOnInit() {
-    this.getMovies();
-    this.getFavorites();
-    
-  }
-  ngDoCheck(){
-    this.getFavorites();
+    this.movieService.getMovies().subscribe(movies => this.movies = movies);
+  
   }
 
-  getMovies(): void{
-    this.movieService.getMovies()
-        .subscribe(movies => this.movies = movies);
-  }
-
-  getFavorites(){
-    this.filteredMovies = this.movies.filter(x => (x.favorite === true));
-    return this.filteredMovies;
-  }
+ 
 
   
 }

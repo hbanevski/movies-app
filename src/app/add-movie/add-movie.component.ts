@@ -18,10 +18,10 @@ export class AddMovieComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(name,desc,director,actors,duration,imageUrl,trailerUrl) {
-    let movie:Movie = {name:name,desc:desc,director:director,actors:actors,duration:duration,imageUrl:imageUrl,trailerUrl:trailerUrl,favorite:false}
-    this.movieService.addMovie(movie);
-    this.router.navigate(['/all-movies']);
+  onSubmit(id,name,description,director,actors,duration,imageUrl,trailerUrl) {
+    let movie:Movie = {id:id,name:name,description:description,director:director,actors:actors,duration:duration,imageUrl:imageUrl,trailerUrl:trailerUrl,favorite:false}
+    this.movieService.addMovies(movie);
+    this.router.navigate(['/']);
   }
 }
   

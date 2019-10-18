@@ -1,12 +1,12 @@
 <div id="container">
-    <form id="movie-form" ngNativeValidate (ngSubmit)="onSubmit(name.value, desc.value, director.value, actors.value, duration.value, imageUrl.value, trailerUrl.value)">
+    <form id="movie-form" ngNativeValidate (ngSubmit)="onSubmit(name.value, description.value, director.value, actors.value, duration.value, imageUrl.value, trailerUrl.value)">
         <div class="form-group">
             <label for="name">Name:</label>
             <input required #name name="name" type="text" class="form-control" id="name" placeholder="Enter the movie name">
         </div>
         <div class="form-group">
-            <label for="desc">Description:</label>
-            <textarea required #desc name="desc" class="form-control" id="desc" rows="3" placeholder="What is this movie about?"></textarea>
+            <label for="description">Description:</label>
+            <textarea required #description name="desc" class="form-control" id="description" rows="3" placeholder="What is this movie about?"></textarea>
         </div>
         <div class="form-group">
             <label for="director">Directed by:</label>

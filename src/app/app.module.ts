@@ -6,7 +6,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalModule, BsModalRef } from 'ngx-bootstrap';
 import { RouterModule, Routes } from '@angular/router';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { HttpClient, HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +23,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { environment } from 'src/environments/environment';
 
 
 const appRoutes: Routes= [
@@ -59,7 +62,9 @@ const appRoutes: Routes= [
       appRoutes, {scrollPositionRestoration: 'enabled'}
     ),
     Ng2SearchPipeModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
     
   ],
   providers: [BsModalRef],

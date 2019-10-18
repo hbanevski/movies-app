@@ -1,6 +1,7 @@
 export class Movie {
+   id:string;
    name:string;
-   desc:string; 
+   description:string; 
    director:string;
    actors:string;
    imageUrl:string;
