@@ -31,6 +31,18 @@ export class MovieService {
       return this.movies;
    }
 
+   getFavs() : Observable<Movie[]>{
+    this.favMovies = this.afs.collection('movies', ref => ref.where('favorite', '==', true)).snapshotChanges().pipe(
+      map(changes => {
+        return changes.map(action => {
+          const data = action.payload.doc.data() as Movie;
+          data.id = action.payload.doc.id
+          return data;
+        });
+      }))
+    return this.favMovies;
+   }
+
    addMovies(movie:Movie){
      this.moviesCollection.add(movie);
    }

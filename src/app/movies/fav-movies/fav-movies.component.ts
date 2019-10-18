@@ -19,7 +19,7 @@ export class FavMoviesComponent implements OnInit {
 
 
   ngOnInit() {
-    this.movieService.getMovies().subscribe(movies => this.movies = movies);
+    this.movieService.getFavs().subscribe(movies => this.filteredMovies = movies);
   
   }
 
