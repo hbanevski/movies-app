@@ -1,4 +1,4 @@
-<ng-container id="no-fav" *ngIf="filteredMovies.length <= 0 ; else favorite">
+<ng-template id="no-fav" #favorites>
     <div class="wrap">
         <div class="no-fav">
 
@@ -6,9 +6,9 @@
             <h2>Select your favorite motion pictures from the <a [routerLink]="['/all-movies']">collection</a></h2>
         </div>
     </div>
-</ng-container>
+</ng-template>
 
-<ng-template #favorite>
+<ng-container *ngIf="filteredMovies.length > 0; else favorites">
     <div class="wrap">
         <form action="">
             <input type="text" placeholder="Search through favorie movies" class="form-control" [(ngModel)]="searchText" name="search" autocomplete="off">
@@ -21,4 +21,4 @@
             </ng-container>
         </div>
     </div>
-</ng-template>
+</ng-container>
