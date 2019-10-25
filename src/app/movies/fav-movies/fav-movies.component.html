@@ -8,7 +8,7 @@
     </div>
 </ng-template>
 
-<ng-container *ngIf="filteredMovies.length > 0; else favorites">
+<ng-container *ngIf="filteredMovies && filteredMovies.length > 0; else favorites">
     <div class="wrap">
         <form action="">
             <input type="text" placeholder="Search through favorie movies" class="form-control" [(ngModel)]="searchText" name="search" autocomplete="off">

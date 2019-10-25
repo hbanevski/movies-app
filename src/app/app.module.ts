@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalModule, BsModalRef } from 'ngx-bootstrap';
-import { RouterModule, Routes } from '@angular/router';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
@@ -24,15 +23,6 @@ import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { environment } from 'src/environments/environment';
-
-
-const appRoutes: Routes= [
-  {path:'all-movies', component: MovieListComponent},
-  {path: 'favorite-movies', component: FavMoviesComponent},
-  {path: '',   redirectTo: '/all-movies', pathMatch: 'full' },
-  {path: 'add-movie', component: AddMovieComponent},
-  {path: '**', component: PageNotFoundComponent}
-]
 
 @NgModule({
   declarations: [
@@ -58,9 +48,6 @@ const appRoutes: Routes= [
     NgbModule,
     BrowserAnimationsModule,
     ModalModule.forRoot(),
-    RouterModule.forRoot(
-      appRoutes, {scrollPositionRestoration: 'enabled'}
-    ),
     Ng2SearchPipeModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),

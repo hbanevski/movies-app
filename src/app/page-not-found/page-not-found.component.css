@@ -1,5 +1,6 @@
 #wrapper {
-    height: 1fr;
+    min-height: 100vh;
+    padding-top: 10%;
 }
 
 #body {
@@ -7,9 +8,5 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 300px;
-}
-
-button {
-    margin-top: 5%;
+    padding: 150px;
 }
